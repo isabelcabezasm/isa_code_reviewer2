@@ -1,0 +1,16 @@
+{
+  "pull_request": {
+    "number": 42,
+    "title": "Add orchestrated PR reviews",
+    "body": "Introduces reviewer infrastructure for GitHub Actions.",
+    "draft": false,
+    "head": {
+      "sha": "abcdef1234567890",
+      "ref": "feature/pr-review"
+    },
+    "base": {
+      "sha": "1234567890abcdef",
+      "ref": "main"
+    }
+  }
+}

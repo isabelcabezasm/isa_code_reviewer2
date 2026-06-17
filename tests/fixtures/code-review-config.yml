@@ -1,0 +1,26 @@
+version: 1
+review:
+  draft_prs: true
+  max_files: 25
+  max_patch_chars_per_file: 4096
+comment:
+  mode: sticky
+  collapse_sections: false
+agents:
+  security:
+    enabled: true
+    provider: anthropic
+    model: claude-3-7-sonnet-latest
+    severity_threshold: high
+    rules:
+      - Flag secrets
+  code_quality:
+    enabled: true
+    provider: openai
+    model: gpt-4o
+    severity_threshold: medium
+  test_coverage:
+    enabled: false
+    provider: openai
+    model: gpt-4o-mini
+    severity_threshold: low
