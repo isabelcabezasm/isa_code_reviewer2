@@ -1,0 +1,19 @@
+[project]
+name = "code-reviewer"
+version = "0.1.0"
+description = "Development environment for the code reviewer project"
+requires-python = ">=3.11"
+dependencies = [
+    "httpx>=0.27.0",
+    "pyyaml>=6.0.2",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.0",
+    "pyright>=1.1.398",
+    "ruff>=0.11.0",
+]
+
+[tool.uv]
+package = false

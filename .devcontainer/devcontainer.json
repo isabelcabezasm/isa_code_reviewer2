@@ -1,0 +1,29 @@
+{
+    "name": "Code Reviewer Container",
+    "image": "mcr.microsoft.com/devcontainers/base:jammy",
+    "features": {
+        "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+        "ghcr.io/devcontainers/features/github-cli:1": {},
+        "ghcr.io/devcontainers/features/git:1": {},
+        "ghcr.io/devcontainers/features/azure-cli:1": {},
+        "ghcr.io/devcontainers-extra/features/markdownlint-cli2": {}      
+    },
+    "postCreateCommand": "chmod +x ./.devcontainer/post_create.sh && ./.devcontainer/post_create.sh",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "github.copilot", // GitHub Copilot
+                "github.copilot-chat",
+                "ms-python.python", // Python extension
+                "ms-python.debugpy", // Debugpy extension for Python  
+                "charliermarsh.ruff" // linter
+            ]
+        }
+    },
+    "forwardPorts": [],
+    "remoteUser": "vscode",
+    "mounts": [
+        "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
+    ],    
+    "shutdownAction": "none"
+}
